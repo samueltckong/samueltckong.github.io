@@ -1,1 +1,1 @@
-my site : <url>samueltckong.github.io<url>
+my site : (samueltckong.github.io)
