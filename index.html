@@ -1,115 +1,329 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Samuel Kong — Homepage</title>
-  <meta name="description" content="Samuel Kong — PhD student | Computational Biology. Homepage, publications, awards, service." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧬</text></svg>">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Samuel Kong</title>
+
+  <meta
+    name="description"
+    content="Samuel Kong — PhD researcher in computational biology, network science, and machine learning."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #111827; /* gray-900 */
-      --muted: #6b7280; /* gray-500 */
-      --link: #1d4ed8; /* blue-700 */
-      --border: #e5e7eb; /* gray-200 */
+      --background: #ffffff;
+      --text: #181818;
+      --muted: #686868;
+      --border: #dedede;
+      --link: #174ea6;
+      --content-width: 760px;
     }
+
     @media (prefers-color-scheme: dark) {
-      :root { --bg:#0b0f17; --text:#e5e7eb; --muted:#9ca3af; --link:#60a5fa; --border:#1f2937; }
-      img { filter: brightness(0.95) contrast(1.05); }
+      :root {
+        --background: #101010;
+        --text: #eeeeee;
+        --muted: #a0a0a0;
+        --border: #303030;
+        --link: #8ab4f8;
+      }
     }
-    html, body { background: var(--bg); color: var(--text); margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
 
-    /* Sticky top nav */
-    nav { position: sticky; top: 0; z-index: 10; backdrop-filter: saturate(140%) blur(6px); background: color-mix(in oklab, var(--bg), transparent 5%); border-bottom: 1px solid var(--border); }
-    .nav-inner { max-width: 960px; margin: 0 auto; padding: 10px 20px; display: flex; justify-content: center; gap: 24px; align-items: center; flex-wrap: wrap; }
-    .brand { display: none; }
-    .nav-link { color: var(--text); opacity: 0.9; font-weight: 600; }
-    .nav-link:hover { opacity: 1; }
+    * {
+      box-sizing: border-box;
+    }
 
-    .wrap { max-width: 960px; margin: 0 auto; padding: 28px 20px 40px; display: flex; gap: 40px; }
-    .sidebar { flex: 0 0 220px; }
-    .sidebar img { width: 200px; border-radius: 12px; border: 1px solid var(--border); }
-    .main { flex: 1; }
-    h1 { font-size: 32px; margin: 0 0 4px; }
-    .headline { margin: 0 0 16px; color: var(--muted); }
-    .contact { margin: 12px 0 20px; display: flex; flex-direction: column; gap: 6px; font-weight: 500; }
-    section { margin-bottom: 32px; scroll-margin-top: 72px; }
-    section h2 { font-size: 22px; margin: 20px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
-    ul { padding-left: 20px; }
-    li { margin: 6px 0; line-height: 1.5; }
-    .dotlist { list-style: none; padding: 0; margin: 0; display: flex; gap: 10px; flex-wrap: wrap; }
-    .dotlist li { position: relative; padding-left: 12px; color: var(--muted); }
-    .dotlist li::before { content: "•"; position: absolute; left: 0; color: var(--muted); }
-    footer { margin-top: 40px; color: var(--muted); font-size: 14px; }
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: min(var(--content-width), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 80px 0 56px;
+    }
+
+    header {
+      margin-bottom: 64px;
+    }
+
+    h1,
+    h2,
+    p,
+    ul {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 6px;
+      font-size: clamp(2.1rem, 6vw, 2.8rem);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+    }
+
+    .role {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      text-underline-offset: 3px;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 54px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    .interests {
+      color: var(--muted);
+    }
+
+    ul {
+      margin-bottom: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 25px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .publication-title {
+      display: block;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .publication-status {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .compact-list li {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      margin-top: 72px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        width: min(100% - 32px, var(--content-width));
+        padding-top: 48px;
+      }
+
+      header {
+        margin-bottom: 52px;
+      }
+
+      section {
+        margin-bottom: 44px;
+      }
+
+      .contact {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <!-- Sticky top navigation centered -->
-  <nav aria-label="Main">
-    <div class="nav-inner">
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#pubs">Publications</a>
-      <a class="nav-link" href="#awards">Awards</a>
-      <a class="nav-link" href="#service">Service</a>
-    </div>
-  </nav>
-
-  <div id="top" class="wrap">
-    <aside class="sidebar">
-      <img src="https://avatars.githubusercontent.com/u/000000?v=4" alt="Samuel Kong headshot placeholder" />
-    </aside>
-    <main class="main">
+  <main>
+    <header>
       <h1>Samuel Kong</h1>
-      <p class="headline">PhD student in Computational Biology</p>
+
+      <p class="role">
+        PhD Researcher in Computational Biology
+      </p>
+
       <div class="contact">
-        <a href="mailto:samuelkongwork@gmail.com">📧 Email</a>
-        <a href="https://github.com/samueltckong">💻 GitHub</a>
-        <a href="https://www.linkedin.com/in/samueltckong/">🔗 LinkedIn</a>
-        <span>📍 Marseille, FR</span>
+        <a href="mailto:samuelkongwork@gmail.com">Email</a>
+        <a href="https://github.com/samueltckong">GitHub</a>
+        <a href="https://www.linkedin.com/in/samueltckong/">LinkedIn</a>
+        <span>Marseille, France</span>
       </div>
+    </header>
 
-      <section id="about">
-        <h2>About Me</h2>
-        <p>I’m a PhD student at CNRS-Aix‑Marseille University, working at the interface of mitochondrial biology and machine learning. I build graph‑centric tools and models to study mitochondrial function and disease.</p>
-        <ul class="dotlist">
-          <li>Mitochondrial omics & interactomes</li>
-          <li>Graph/temporal networks</li>
-          <li>LLMs for bioinformatics</li>
-          <li>Image analysis of mitochondria</li>
-        </ul>
-      </section>
+    <section>
+      <h2>About</h2>
 
-      <section id="pubs">
-        <h2>Preprints & Publications</h2>
-        <ul>
-          <li><strong>MitoGPT: Fine‑tuning Language Models for Mitochondrial Genome Annotation</strong> (in prep.)</li>
-          <li><strong>mitoXplorer 4.0: Analysing and modeling mitochondrial tissue diversity by integrating multi-omics data</strong>. <em>J. Mol. Biol.</em>, 2025.</li>
-        </ul>
-      </section>
+      <p>
+        I am a PhD researcher at CNRS and Aix-Marseille University, working
+        at the intersection of computational biology, network science, and
+        machine learning. My research focuses on integrating multi-omics data
+        to model mitochondrial tissue diversity, biological mechanisms, and
+        disease-associated processes.
+      </p>
 
-      <section id="awards">
-        <h2>Honors & Awards</h2>
-        <ul>
-          <li>Experienced Award in Disruptive Technology, European Commission DigiEduHack — 2023</li>
-        </ul>
-      </section>
+      <p class="interests">
+        Research interests include multi-omics integration, network biology,
+        mitochondrial systems biology, biological foundation models,
+        mechanistic interpretability, and interpretable machine learning.
+      </p>
+    </section>
 
-      <section id="service">
-        <h2>Academic Service</h2>
-        <ul>
-          <li>Open Source Contributor: Cohere Labs, ML Collective</li>
-        </ul>
-      </section>
+    <section>
+      <h2>Publications and Research</h2>
 
-      <footer>
-        <div>Last updated Oct 1, 2025.</div>
-      </footer>
-    </main>
-  </div>
+      <ul>
+        <li>
+          <span class="publication-title">
+            Agreement Between Conversational Agents-Administered and
+            Original-Format Patient-Reported Outcome Measures Collection:
+            A Systematic Review
+          </span>
+
+          <span class="publication-status">
+            Submitted · The Lancet Digital Health
+          </span>
+        </li>
+
+        <li>
+          <span class="publication-title">
+            Feature Drift in Clinical LLMs on Fine-Tuning and Localized
+            Weight Editing
+          </span>
+
+          <span class="publication-status">
+            In progress · Target: ICLR 2027
+          </span>
+        </li>
+
+        <li>
+          <span class="publication-title">
+            Memorization or Understanding? Auditing Genomic Language Models
+            for Leakage and Memorization by Circuit-Level Testing on
+            Circular Genomes
+          </span>
+
+          <span class="publication-status">
+            In progress · Target: ICLR 2027
+          </span>
+        </li>
+
+        <li>
+          <span class="publication-title">
+            MitoGPT: Fine-Tuning Language Models for Mitochondrial Genome
+            Annotation
+          </span>
+
+          <span class="publication-status">
+            In preparation
+          </span>
+        </li>
+
+        <li>
+          <span class="publication-title">
+            mitoXplorer 4.0: Analysing and Modeling Mitochondrial Tissue
+            Diversity by Integrating Multi-Omics Data
+          </span>
+
+          <span class="publication-status">
+            Journal of Molecular Biology · 2025
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Awards</h2>
+
+      <ul class="compact-list">
+        <li>
+          <span class="publication-title">
+            Experienced Award in Disruptive Technology
+          </span>
+
+          <span class="publication-status">
+            European Commission DigiEduHack · 2023
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Academic Service</h2>
+
+      <ul class="compact-list">
+        <li>
+          Open-source contributor to Cohere Labs and ML Collective
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      Last updated August 2026
+    </footer>
+  </main>
 </body>
-
 </html>
-
+```
